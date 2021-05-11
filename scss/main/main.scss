@@ -1,0 +1,53 @@
+.section-bg {
+    background-color: aqua;
+    @media (max-width: 768px) {
+        background-color: darkolivegreen;
+    }
+    .container {
+    //   @extend %container-size;
+        .flex-wraper {
+           @include d-flex(flex,space-between, center);
+            @media (max-width: $width03) {
+                @include d-flex(flex, center, center);
+            }
+            .test1 {
+                font-size: $size01;
+                color: $color01;
+                margin-top: $size01;
+                font-family: $font01;
+                @include transition-hover(all,0.5s, linear, 2s);
+                &:hover {
+                    color: $color05;
+                }
+            }
+            .test2 {
+               @extend .test1;
+            }
+        }
+        .box2 {
+            width: $size02;
+            height: $size02;
+            background-color: $color03;
+        }
+    }
+}
+
+.section2-bg {
+    background-color: $color04;
+    .flex-images {
+        @include d-flex(flex, center, center);
+        .image {
+            width: 300px;
+            @media (max-width: 1024px) {
+                width: 500px;
+            }
+        }
+        .flex-text {
+            width: 250px;
+            // @media (max-width: 768px) {
+            //     background-color: deeppink;
+            // }
+        }
+
+    }
+}
